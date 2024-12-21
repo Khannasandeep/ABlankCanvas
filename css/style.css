@@ -1,0 +1,416 @@
+/* Basic Reset */
+/* General Styles */
+body {
+    font-family: 'Inter', sans-serif;
+    margin: 0;
+    padding: 0;
+    color: #2f3437;
+    line-height: 1.5;
+    background-color: #fff;
+}
+
+/* Header Styles */
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #fff;
+    padding: 1rem 1rem 2rem;
+    position: fixed;
+    width: 100%;
+    top: 0;
+    z-index: 1000;
+    box-sizing: border-box; /* Ensure padding is included in the width */
+   
+}
+
+.logo {
+    font-size: 1.2rem;
+    font-weight: 600;
+    color: #2f3437;
+}
+
+.nav-links {
+    display: flex;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.nav-links li {
+    margin: 0 0.5rem;
+}
+
+.nav-links a {
+    text-decoration: none;
+    font-size: 0.9rem;
+    color: #2f3437;
+    font-weight: 400;
+    padding: 0.3rem 0.5rem;
+    transition: color 0.3s ease;
+}
+
+.nav-links a:hover {
+    color: #2f3437;
+    font-weight: 600;
+}
+
+
+
+.gallery-section {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    margin: 2rem auto;
+    max-width: 1000px;
+    margin-top: 7rem;
+}
+
+.gallery-item {
+    display: flex;
+    gap: 1rem;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+}
+
+.gallery-item.reverse {
+    flex-direction: row-reverse;
+}
+
+.gallery-image {
+    width: 50%; /* Ensures equal space with the description */
+    height: auto;
+    display: flex;
+    justify-content: center;
+    overflow: hidden; /* Prevent the image from overflowing */
+}
+
+.gallery-image img {
+    width: 100%;
+    height: auto;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    transition: transform 0.3s ease-in-out; /* Smooth zoom effect */
+}
+
+.gallery-image img:hover {
+    transform: scale(1.2); /* Zoom in when the user hovers over the image */
+}
+
+.gallery-description {
+    width: 50%; /* Ensures equal space with the image */
+    padding: 1rem;
+    text-align: left;
+    max-height: 400px; /* Limit the height */
+    overflow-y: auto; /* Add scroll when content overflows */
+}
+
+.gallery-description h2 {
+    font-size: 2rem;
+    margin: 0.5rem 0;
+}
+
+.gallery-description p {
+    font-size: 1rem;
+    color: #2f3437;
+    margin: 0rem 0;
+}
+
+/* Modal Styles */
+.modal {
+    display: none; /* Initially hidden */
+    position: fixed;
+    z-index: 1000;
+    top: 0;
+    left: 0;
+    width: 100vw; /* Full screen width */
+    height: 100vh; /* Full screen height */
+    background-color: rgba(0, 0, 0, 0.9); /* Dark semi-transparent background */
+    overflow-y: auto; /* Enable vertical scrolling */
+    justify-content: center;
+    align-items: flex-start; /* Align content to the top */
+    padding: 1rem; /* Add padding around the content */
+    box-sizing: border-box; /* Include padding in dimensions */
+}
+
+.modal-content {
+    max-width: 900px; /* Limit content width for better readability */
+    margin: 0 auto; /* Center horizontally */
+    background-color: #fff; /* White background for content as well */
+    border-radius: 0px; /* Rounded corners for content box */
+    overflow: hidden; /* Prevent content overflow */
+    box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.1); /* Subtle shadow for contrast */
+}
+
+.modal-content img {
+    width: 100%; /* Full width */
+    height: auto; /* Maintain aspect ratio */
+    max-height: 160vh; /* Limit image height to avoid taking over the screen */
+    object-fit: contain; /* Ensure the image fits nicely without cropping */
+}
+
+.painting-details {
+    padding: 1rem;
+    color: #333; /* Dark text for contrast on white background */
+    text-align: center; /* Center align text */
+    background-color: #fff; /* Ensure consistent white background */
+}
+
+.painting-details h2 {
+    font-size: 1.2rem;
+    margin-bottom: 0.5rem;
+}
+
+.painting-details p {
+    font-size: 0.85rem;
+    margin: 0.2rem 0;
+    color: #555; /* Slightly lighter gray for secondary text */
+}
+
+.close-btn {
+    position: fixed;
+    top: 10px;
+    right: 20px;
+    font-size: 2rem;
+    color: #555; /* Dark gray close button */
+    cursor: pointer;
+    z-index: 1100; /* Ensure it stays above other content */
+}
+
+.close-btn:hover {
+    color: #000; /* Highlight close button on hover */
+}
+
+/* Hamburger menu styles */
+.hamburger {
+    display: none; /* Hide by default */
+    flex-direction: column;
+    gap: 5px;
+    cursor: pointer;
+}
+
+.hamburger .line {
+    width: 30px;
+    height: 3px;
+    background-color: #333;
+    border-radius: 2px;
+}
+
+/* Show hamburger on mobile screens */
+@media (max-width: 768px) {
+    .hamburger {
+        display: flex; /* Show hamburger on mobile */
+    }
+
+    .nav-links {
+        display: none; /* Hide the menu links by default */
+        position: absolute;
+        top: 60px;
+        right: 0;
+        background-color: rgba(255, 255, 255, 0.9); /* Semi-transparent white */
+        width: 100%;
+        text-align: right;
+        box-shadow: 0px 4px 6px rgba(0, 0, 0, 0);
+        padding: 1rem;
+        list-style: none;
+        margin: 0;
+    }
+
+    .nav-links li {
+        margin: 1rem 0;
+    }
+
+    .nav-links a {
+        font-size: 1rem;
+        color: #333;
+        text-decoration: none;
+        font-weight: 500;
+        padding: 0.3rem;
+        display: block;
+    }
+
+    .nav-links a:hover {
+        color: #000;
+    }
+
+    /* Hover effect to show the menu */
+    .hamburger:hover + .nav-links {
+        display: block; /* Show the menu when hovering over the hamburger icon */
+    }
+
+    /* Show the nav links when .show is added (JavaScript toggle) */
+    .nav-links.show {
+        display: block;
+    }
+}
+
+
+/* Mobile Responsive Styles */
+@media (max-width: 768px) {
+    .logo {
+        font-size: 1.2rem;
+    }
+
+    .nav-links {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .nav-links li {
+        margin: 0.5rem 0;
+    }
+
+    .gallery-section {
+        margin-top: 5rem;
+        padding: 1rem;
+    }
+
+    .gallery-item {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .gallery-item.reverse {
+        flex-direction: column;
+    }
+
+    .gallery-image,
+    .gallery-description {
+        width: 100%;
+        padding: 0;
+        text-align: center;
+    }
+
+    .gallery-description h2 {
+        font-size: 1.8rem;
+    }
+
+    .gallery-description p {
+        font-size: 0.9rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .gallery-description h2 {
+        font-size: 1.2rem;
+        
+    }
+
+    .gallery-description p {
+        font-size: 0.8rem;
+    }
+
+    .modal-content {
+        width: 100%;
+        padding: 1rem;
+    }
+
+    .close-btn {
+        font-size: 1.5rem;
+        top: 15px;
+        right: 10px;
+    }
+}
+
+/* Restored Dark Mode Styling */
+
+/* Dark Mode Styles for Header and Links */
+.dark-mode header {
+    background-color: #1e1e1f;
+    color: #f0f0f3;
+}
+
+.dark-mode .logo {
+    color: #f0f0f3;
+}
+
+.dark-mode .nav-links a {
+    color: #cccccc; /* Lighter text color for visibility */
+    font-weight: 400;
+}
+
+.dark-mode .nav-links a:hover {
+    color: #ffffff; /* Highlighted color on hover */
+    font-weight: 600;
+}
+
+.dark-mode .hamburger .line {
+    background-color: #f0f0f3; /* Adjust hamburger lines in dark mode */
+}
+
+body.dark-mode {
+  background-color: #1c1c1e;
+  color: #e4e4e4;
+}
+
+.dark-mode h1, .dark-mode h2, .dark-mode h3 {
+  color: #f0f0f3;
+}
+
+.dark-mode p, .dark-mode li {
+  color: #cccccc;
+}
+
+.dark-mode .btn-primary {
+  background-color: #ffffff;
+  color: #2f3437;
+  box-shadow: 0 2px 8px rgba(255, 255, 255, 0.15);
+}
+
+.dark-mode .btn-primary:hover {
+  background-color: #e0e0e0;
+  color: #2f3437;
+  box-shadow: 0 4px 16px rgba(255, 255, 255, 0.2);
+}
+
+.dark-mode .shadow-card {
+  background-color: #2a2a2c;
+  box-shadow: none;
+}
+
+.dark-mode header {
+  background-color: #1e1e1f;
+  color: #f0f0f3;
+}
+
+.dark-mode .nav-links a {
+    color: #ffffff; /* White text for visibility */
+}
+
+.dark-mode .nav-links a:hover {
+    color: #00aaff; /* Highlighted color for links on hover */
+}
+
+/* Dark Mode Toggle Button Styles */
+.dark-mode .toggle-btn {
+    border-color: #e4e4e4; /* Light border color for better contrast in dark mode */
+}
+
+.dark-mode .toggle-btn.active {
+    border-color: #ffcc00; /* Highlighted color for the active state in dark mode */
+}
+
+/* Circular Ring Toggle Button */
+.toggle-btn {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    width: 25px; /* Adjust size as needed */
+    height: 25px;
+    background-color: transparent; /* Transparent center */
+    border: 2.5px solid #333; /* Dark border for the ring */
+    border-radius: 50%; /* Makes it a perfect circle */
+    cursor: pointer;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2); /* Subtle shadow for a floating effect */
+    z-index: 1000;
+    transition: border-color 0.3s ease, transform 0.3s ease; /* Smooth hover and toggle effects */
+}
+
+.toggle-btn:hover {
+    transform: scale(1.1); /* Slight zoom effect on hover */
+}
+
+.toggle-btn.active {
+    border-color: #00aaff; /* Changes the border color when toggled */
+}

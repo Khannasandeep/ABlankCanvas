@@ -1,0 +1,328 @@
+body {
+    font-family: 'Inter', sans-serif;
+    margin: 0;
+    padding: 0;
+    color: #333;
+    line-height: 1.5;
+    background-color: #f9f9f9;
+}
+
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #f9f9f9;
+  padding: 1rem 1rem 2rem;
+  position: fixed;
+  width: 100%;
+  top: 0;
+  z-index: 1000;
+  box-sizing: border-box; /* Ensure padding is included in the width */
+   
+}
+
+.logo {
+    font-size: 1.2rem;
+    font-weight: 600;
+    color: #333;
+}
+
+.nav-links {
+    display: flex;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.nav-links li {
+    margin: 0 0.5rem;
+}
+
+.nav-links a {
+    text-decoration: none;
+    font-size: 0.9rem;
+    color: #555;
+    font-weight: 400;
+    padding: 0.3rem 0.5rem;
+    transition: color 0.3s ease;
+}
+
+.nav-links a:hover {
+    color: #000;
+    font-weight: 600;
+}
+
+.gallery {
+  padding: 20px;
+  margin-top: 6rem;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr); /* Three columns of equal width */
+  grid-auto-rows: auto; /* Automatically adjust row height */
+  gap: 20px; /* Consistent gap between columns and rows */
+  position: relative; /* Ensures child alignment */
+}
+
+/* Ensure images have uniform widths but variable heights */
+.grid img {
+  width: 100%; /* Ensure column widths are equal */
+  height: auto; /* Maintain aspect ratio for images */
+  border-radius: 10px;
+  object-fit: cover;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  display: block;
+  margin: 0 auto;
+  transition: transform 0.2s ease;
+}
+
+/* Modal Styles */
+.modal {
+    display: none; /* Initially hidden */
+    position: fixed;
+    z-index: 1000;
+    top: 0;
+    left: 0;
+    width: 100vw; /* Full screen width */
+    height: 100vh; /* Full screen height */
+    background-color: rgba(0, 0, 0, 0.9); /* Dark semi-transparent background */
+    overflow-y: auto; /* Enable vertical scrolling */
+    justify-content: center;
+    align-items: center; /* Center the image */
+    padding: 1rem; /* Add padding around the content */
+    box-sizing: border-box; /* Include padding in dimensions */
+}
+
+.modal img {
+    max-width: 90%; /* Limit the size of the image */
+    max-height: 90%; /* Limit the height of the image */
+    object-fit: contain;
+}
+
+.close-btn {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    color: #fff;
+    font-size: 2rem;
+    cursor: pointer;
+    z-index: 2000;
+}
+
+.grid img {
+    cursor: pointer; /* Make images clickable */
+}
+
+/* Add hover effects for images */
+.grid img:hover {
+  transform: scale(1.05);
+}
+
+
+/* Hamburger menu styles */
+.hamburger {
+    display: none; /* Hide by default */
+    flex-direction: column;
+    gap: 5px;
+    cursor: pointer;
+}
+
+.hamburger .line {
+    width: 30px;
+    height: 3.5px;
+    background-color: #333;
+    border-radius: 2px;
+}
+
+/* Show hamburger on mobile screens */
+@media (max-width: 768px) {
+    .hamburger {
+        display: flex; /* Show hamburger on mobile */
+    }
+
+    .nav-links {
+        display: none; /* Hide the menu links by default */
+        position: absolute;
+        top: 60px;
+        right: 0;
+        background-color: rgba(255, 255, 255, 0.9); /* Semi-transparent white */
+        width: 100%;
+        text-align: right;
+        box-shadow: 0px 4px 6px rgba(0, 0, 0, 0);
+        padding: 1rem;
+        list-style: none;
+        margin: 0;
+    }
+
+    .nav-links li {
+        margin: 1rem 0;
+    }
+
+    .nav-links a {
+        font-size: 1rem;
+        color: #333;
+        text-decoration: none;
+        font-weight: 500;
+        padding: 0.3rem;
+        display: block;
+    }
+
+    .nav-links a:hover {
+        color: #000;
+    }
+
+    /* Hover effect to show the menu */
+    .hamburger:hover + .nav-links {
+        display: block; /* Show the menu when hovering over the hamburger icon */
+    }
+
+    /* Show the nav links when .show is added (JavaScript toggle) */
+    .nav-links.show {
+        display: block;
+    }
+}
+
+/* Mobile View Adjustments */
+@media (max-width: 768px) {
+    .grid {
+        grid-template-columns: 1fr; /* Single column */
+        gap: 10px;
+    }
+
+    .nav-links {
+        display: none;
+        position: absolute;
+        top: 60px;
+        right: 0;
+        background-color: rgba(255, 255, 255, 0.9);
+        width: 100%;
+        text-align: right;
+        box-shadow: 0px 4px 6px rgba(0, 0, 0, 0);
+        padding: 1rem;
+        list-style: none;
+        margin: 0;
+    }
+
+    .nav-links li {
+        margin: 1rem 0;
+    }
+
+    .hamburger {
+        display: flex;
+        flex-direction: column;
+        gap: 5px;
+        cursor: pointer;
+    }
+
+    .hamburger .line {
+        width: 30px;
+        height: 3.5px;
+        background-color: #333;
+        border-radius: 2px;
+    }
+}
+
+/* Restored Dark Mode Styling */
+
+/* Dark Mode Styles for Header and Links */
+.dark-mode header {
+    background-color: #1e1e1f;
+    color: #f0f0f3;
+}
+
+.dark-mode .logo {
+    color: #f0f0f3;
+}
+
+.dark-mode .nav-links a {
+    color: #cccccc; /* Lighter text color for visibility */
+    font-weight: 400;
+}
+
+.dark-mode .nav-links a:hover {
+    color: #ffffff; /* Highlighted color on hover */
+    font-weight: 600;
+}
+
+.dark-mode .hamburger .line {
+    background-color: #f0f0f3; /* Adjust hamburger lines in dark mode */
+}
+
+body.dark-mode {
+  background-color: #1c1c1e;
+  color: #e4e4e4;
+}
+
+.dark-mode h1, .dark-mode h2, .dark-mode h3 {
+  color: #f0f0f3;
+}
+
+.dark-mode p, .dark-mode li {
+  color: #cccccc;
+}
+
+.dark-mode .btn-primary {
+  background-color: #ffffff;
+  color: #2f3437;
+  box-shadow: 0 2px 8px rgba(255, 255, 255, 0.15);
+}
+
+.dark-mode .btn-primary:hover {
+  background-color: #e0e0e0;
+  color: #2f3437;
+  box-shadow: 0 4px 16px rgba(255, 255, 255, 0.2);
+}
+
+.dark-mode .shadow-card {
+  background-color: #2a2a2c;
+  box-shadow: none;
+}
+
+.dark-mode header {
+  background-color: #1e1e1f;
+  color: #f0f0f3;
+}
+
+
+.dark-mode .nav-links a {
+    color: #ffffff; /* White text for visibility */
+}
+
+.dark-mode .nav-links a:hover {
+    color: #00aaff; /* Highlighted color for links on hover */
+}
+
+/* Dark Mode Toggle Button Styles */
+.dark-mode .toggle-btn {
+    border-color: #e4e4e4; /* Light border color for better contrast in dark mode */
+}
+
+.dark-mode .toggle-btn.active {
+    border-color: #ffcc00; /* Highlighted color for the active state in dark mode */
+}
+
+/* Circular Ring Toggle Button */
+.toggle-btn {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    width: 25px; /* Adjust size as needed */
+    height: 25px;
+    background-color: transparent; /* Transparent center */
+    border: 2.5px solid #333; /* Dark border for the ring */
+    border-radius: 50%; /* Makes it a perfect circle */
+    cursor: pointer;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2); /* Subtle shadow for a floating effect */
+    z-index: 1000;
+    transition: border-color 0.3s ease, transform 0.3s ease; /* Smooth hover and toggle effects */
+}
+
+.toggle-btn:hover {
+    transform: scale(1.1); /* Slight zoom effect on hover */
+}
+
+.toggle-btn.active {
+    border-color: #00aaff; /* Changes the border color when toggled */
+}
+

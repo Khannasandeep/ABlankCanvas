@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About the Artist - A Blank Canvas</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/about-style.css">
+</head>
+<body>
+
+<header>
+    <div class="logo">A Blank Canvas</div>
+    <nav>
+        <ul class="nav-links">
+            <li><a href="index.html">Gallery</a></li>
+            <li><a href="dogs.html">Dog</a></li>
+            <li><a href="about.html">Artist</a></li>
+        </ul>
+    </nav>
+    <div class="hamburger" id="hamburger-menu">
+        <div class="line"></div>
+        <div class="line"></div>
+        <div class="line"></div>
+    </div>
+</header>
+
+<div class="about-section">
+    <div class="about-content">
+        <div class="artist-image">
+            <img src="images/artist.jpeg" alt="Artist Image">
+        </div>
+        <div class="artist-info">
+            <h1>About the Artist</h1>
+            <p>
+                Hi, I’m Disha, the artist behind these creations!
+            </p>
+            <p>
+                Painting is something I truly enjoy, and I love making the most of my free time to bring my ideas to life on the canvas. At home, you’ll usually find me curled up with a good book, enjoying a movie, or getting my hands covered in paint. I also love decorating my space—curating rooms that feel like an extension of myself and my art. And no matter where I go, I always return to my bed, wrapped in four cozy layers, for the perfect night’s rest.
+            </p>
+            <p>
+                I’m a huge dog lover (they’re my absolute favorite, even more than people!).
+            </p>
+            <p>
+                When I’m not painting, you can bet I’m cheering for cricket or diving into the magical worlds of Harry Potter and The Lord of the Rings.
+            </p>
+            <p>
+                Fun Fact: I’ve never watched cartoons—so all my creativity comes from the pages of fictional books.
+            </p>
+            <p>
+                Thanks so much for visiting my gallery! I hope my art brings as much joy and warmth to your life as it does to mine when I create it.
+            </p>
+            <div class="social-links">
+                <a href="https://instagram.com/yourusername" target="_blank">Instagram</a>
+                <a href="https://linkedin.com/in/yourusername" target="_blank">LinkedIn</a>
+            </div>
+        </div>
+    </div>
+</div>
+
+<button class="toggle-btn" onclick="toggleRingButton()"></button>
+
+    
+<script>
+    function toggleDarkMode() {
+        document.body.classList.toggle('dark-mode');
+    }
+
+    document.querySelector('.toggle-btn').addEventListener('click', toggleDarkMode);
+    // Remove dark mode class by default
+    body.classList.remove('dark-mode');
+</script>
+
+<script src="js/about-script.js"></script>
+
+</body>
+</html>
