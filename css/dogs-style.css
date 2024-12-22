@@ -280,13 +280,13 @@ body.dark-mode {
 }
 
 .dark-mode header {
-  background-color: #1e1e1f;
+  background-color: #1c1c1e;
   color: #f0f0f3;
 }
 
 /* Dark Mode Hamburger Menu Styles */
 .dark-mode .nav-links {
-    background-color: rgba(0, 0, 0, 0.5); /* Dark background for the menu */
+    background-color: rgba(28, 28, 30, 0.5); /* Dark background for the menu */
 }
 
 .dark-mode .nav-links a {
