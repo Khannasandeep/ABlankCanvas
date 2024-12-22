@@ -262,12 +262,17 @@ body.dark-mode {
 }
 
 /* Navigation Links in Dark Mode */
+/* Dark Mode Hamburger Menu Styles */
+.dark-mode .nav-links {
+    background-color: rgba(0, 0, 0, 0.5); /* Dark background for the menu */
+}
+
 .dark-mode .nav-links a {
-    color: #cccccc;
+    color: #ffffff; /* White text for visibility */
 }
 
 .dark-mode .nav-links a:hover {
-    color: #ffffff;
+    color: #00aaff; /* Highlighted color for links on hover */
 }
 
 /* About Section in Dark Mode */
