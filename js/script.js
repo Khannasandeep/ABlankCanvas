@@ -2,35 +2,35 @@
 const galleryData = [
     {
         image: "images/1.png",
-        title: "Artwork 1",
-        medium: "Oil on Canvas",
+        title: "Hachi",
+        medium: "Acrylic on Canvas",
         dimensions: "24 x 36 inches",
         year: "2022",
-        description: "A representation of emotions through bold strokes."
+        description: "I keep myself busy with things to do, but everytime I pause I still think of you"
     },
     {
-        image: "images/2.png",
-        title: "Artwork 2",
+        image: "images/2.jpeg",
+        title: "Bridge to Serenity",
         medium: "Acrylic on Canvas",
         dimensions: "30 x 40 inches",
         year: "2023",
-        description: "Explores urban life and abstract themes."
+        description: "This painting features a stunning landscape split across two canvases, depicting a scenic view of the Golden Gate Bridge at sunset.The iconic red bridge stands prominently, connecting the composition and evoking a sense of calm and grandeur."
     },
     {
-        image: "images/3.png",
-        title: "Artwork 3",
-        medium: "Watercolor on Paper",
+        image: "images/3.jpeg",
+        title: "Nature's Harmony",
+        medium: "Acrylic on Canvas",
         dimensions: "18 x 24 inches",
-        year: "2021",
-        description: "A delicate mix of nature and surrealism."
+        year: "2024",
+        description: "The painting represents harmony and balance in nature, with the overlapping leaves symbolizing growth, connection, and simplicity. The golden accents add a touch of elegance, reflecting the beauty and value found in natural elements"
     },
     {
-        image: "images/4.png",
-        title: "Artwork 4",
-        medium: "Charcoal on Paper",
+        image: "images/4.jpeg",
+        title: "The Garden Go Shop",
+        medium: "Watercolor On Textured Paper",
         dimensions: "20 x 30 inches",
-        year: "2020",
-        description: "A monochrome exploration of textures and contrasts."
+        year: "2024",
+        description: "It conveys a charming, small-town vibe, focusing on lush greenery, warm tones, and a cheerful, inviting atmosphere."
     }
 ];
 
